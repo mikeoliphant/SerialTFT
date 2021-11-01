@@ -113,10 +113,14 @@ void handleSerialCommand()
     {
       char *alignment = strtok(NULL, "");
 
-      if (strcasecmp(alignment, "tc") == 0)
+      if (strcasecmp(alignment, "tl") == 0)
+      {
+        screen.setTextDatum(TL_DATUM);
+      }
+      else if (strcasecmp(alignment, "tc") == 0)
       {
         screen.setTextDatum(TC_DATUM);
-      }
+      }      
       else if (strcasecmp(alignment, "tr") == 0)
       {
         screen.setTextDatum(TR_DATUM);
@@ -127,12 +131,8 @@ void handleSerialCommand()
       }    
       else if (strcasecmp(alignment, "mc") == 0)
       {
-        screen.setTextDatum(TL_DATUM);
-      }    
-      else if (strcasecmp(alignment, "tl") == 0)
-      {
         screen.setTextDatum(MC_DATUM);
-      }    
+      }     
       else if (strcasecmp(alignment, "mr") == 0)
       {
         screen.setTextDatum(MR_DATUM);
